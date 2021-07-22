@@ -45,6 +45,9 @@
     "domain-search": {
       "tags": ["domain", "page"]
     },
+    "domain-search-box": {
+      "tags": ["domain", "widget"]
+    },
     "shared-data": {
       "tags": ["shared", "core"]
     },
