@@ -11,6 +11,7 @@
     "../../libs/domain/not-found/src/index.ts",
     "../../libs/domain/resource/src/index.ts",
     "../../libs/domain/category/src/index.ts",
-    "../../libs/domain/resource-new/src/index.ts"
+    "../../libs/domain/resource-new/src/index.ts",
+    "../../libs/domain/search/src/index.ts"
   ]
 }

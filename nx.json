@@ -42,6 +42,9 @@
     "domain-resource-new": {
       "tags": ["domain", "page"]
     },
+    "domain-search": {
+      "tags": ["domain", "page"]
+    },
     "shared-data": {
       "tags": ["shared", "core"]
     },
