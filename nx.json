@@ -30,6 +30,9 @@
     "shared-data": {
       "tags": ["shared", "core"]
     },
+    "shared-form": {
+      "tags": ["shared", "ui"]
+    },
     "shared-global": {
       "tags": ["shared", "core"]
     },
