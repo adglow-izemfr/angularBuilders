@@ -10,7 +10,8 @@ echo "🚧 init nx-workspace";
 
 read -p "Organization: " ORGANIZATION
 read -p "Repository name: " REPOSITORY
-read -p "App name: " APPNAME
+read -p "App name: [www] " APPNAME
+APPNAME=${APPNAME:-'www'}
 npm init nx-workspace $REPOSITORY --appName=$APPNAME --defaultBase=main --interactive=false --linter=eslint --nxCloud=false --npmScope=$ORGANIZATION --preset=angular --style=css
 cd $REPOSITORY
 

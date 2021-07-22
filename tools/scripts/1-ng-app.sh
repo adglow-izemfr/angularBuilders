@@ -2,7 +2,8 @@
 echo "🚧 app intitial configuration ";
 
 echo " app strict ";
-read -p "App name: " APPNAME
+read -p "App name: [www] " APPNAME
+APPNAME=${APPNAME:-'www'}
 json -I -f apps/$APPNAME/tsconfig.json -e "this.compilerOptions = { };"
 echo "this.compilerOptions = { }"
 json -I -f apps/$APPNAME/tsconfig.json -e "this.compilerOptions.forceConsistentCasingInFileNames = true;"

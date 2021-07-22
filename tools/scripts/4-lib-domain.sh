@@ -1,9 +1,9 @@
 echo "🚧 page libraries ";
 
-read -p "Path to Parent Module: [apps/www/src/app/core/core-routing.module.ts]" PARENTMODULE
+read -p "Path to Parent Module: [apps/www/src/app/core/core-routing.module.ts] " PARENTMODULE
 PARENTMODULE=${PARENTMODULE:-'apps/www/src/app/core/core-routing.module.ts'}
 
-read -p "What prefix do you wanna use? [ab]" PREFIX
+read -p "What prefix do you wanna use? [ab] " PREFIX
 PREFIX=${PREFIX:-'ab'}
 
 echo " ✍ generate home page";

@@ -1,9 +1,9 @@
 echo "🚧 auth shared feature";
 
-read -p "Path to Parent Module: [apps/www/src/app/core/core-routing.module.ts]" PARENTMODULE
+read -p "Path to Parent Module: [apps/www/src/app/core/core-routing.module.ts] " PARENTMODULE
 PARENTMODULE=${PARENTMODULE:-'apps/www/src/app/core/core-routing.module.ts'}
 
-read -p "What prefix do you wanna use? [ab]" PREFIX
+read -p "What prefix do you wanna use? [ab] " PREFIX
 PREFIX=${PREFIX:-'ab'}
 
 nx g library auth --directory=shared --importPath=@$PREFIX/auth --prefix=$PREFIX --routing --lazy --parentModule=$PARENTMODULE --tags='shared, page'

@@ -1,6 +1,6 @@
 echo "🚧 configure schematic generators ";
 
-read -p "What prefix do you wanna use?" PREFIX
+read -p "What prefix do you wanna use? [ab] " PREFIX
 PREFIX=${PREFIX:-'ab'}
 
 echo " schematics at angular.json for nx and default ng";
