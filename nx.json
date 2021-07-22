@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "domain-home": {
+      "tags": ["domain", "page"]
+    },
     "shared-data": {
       "tags": ["shared", "core"]
     },
