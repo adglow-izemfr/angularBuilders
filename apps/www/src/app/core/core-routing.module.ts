@@ -21,6 +21,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('@ab/category').then((module) => module.CategoryModule),
   },
+  {
+    path: 'resource-new',
+    loadChildren: () =>
+      import('@ab/resource-new').then((module) => module.ResourceNewModule),
+  },
 ];
 
 @NgModule({
