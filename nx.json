@@ -48,6 +48,9 @@
     "domain-search-box": {
       "tags": ["domain", "widget"]
     },
+    "shared-auth": {
+      "tags": ["shared", "page"]
+    },
     "shared-data": {
       "tags": ["shared", "core"]
     },

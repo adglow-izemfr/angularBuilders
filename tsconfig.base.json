@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ab/auth": ["libs/shared/auth/src/index.ts"],
       "@ab/category": ["libs/domain/category/src/index.ts"],
       "@ab/data": ["libs/shared/data/src/index.ts"],
       "@ab/form": ["libs/shared/form/src/index.ts"],
