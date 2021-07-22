@@ -33,6 +33,9 @@
     "domain-not-found": {
       "tags": ["domain", "page"]
     },
+    "domain-resource": {
+      "tags": ["domain", "page"]
+    },
     "shared-data": {
       "tags": ["shared", "core"]
     },

@@ -8,6 +8,7 @@
   "include": [
     "src/**/*.d.ts",
     "../../libs/domain/home/src/index.ts",
-    "../../libs/domain/not-found/src/index.ts"
+    "../../libs/domain/not-found/src/index.ts",
+    "../../libs/domain/resource/src/index.ts"
   ]
 }
