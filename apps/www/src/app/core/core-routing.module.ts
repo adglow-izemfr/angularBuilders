@@ -16,6 +16,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('@ab/resource').then((module) => module.ResourceModule),
   },
+  {
+    path: 'category',
+    loadChildren: () =>
+      import('@ab/category').then((module) => module.CategoryModule),
+  },
 ];
 
 @NgModule({

@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "domain-category": {
+      "tags": ["domain", "page"]
+    },
     "domain-home": {
       "tags": ["domain", "page"]
     },

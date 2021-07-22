@@ -1,6 +1,47 @@
 {
   "version": 1,
   "projects": {
+    "domain-category": {
+      "projectType": "library",
+      "root": "libs/domain/category",
+      "sourceRoot": "libs/domain/category/src",
+      "prefix": "ab",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/domain/category"],
+          "options": {
+            "project": "libs/domain/category/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/domain/category/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/domain/category/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/domain/category"],
+          "options": {
+            "jestConfig": "libs/domain/category/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/domain/category/src/**/*.ts",
+              "libs/domain/category/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "domain-home": {
       "projectType": "library",
       "root": "libs/domain/home",
