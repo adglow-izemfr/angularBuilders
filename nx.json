@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "shared-data": {
+      "tags": ["shared", "core"]
+    },
     "shared-global": {
       "tags": ["shared", "core"]
     },
