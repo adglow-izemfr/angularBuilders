@@ -36,6 +36,9 @@
     "shared-global": {
       "tags": ["shared", "core"]
     },
+    "shared-layout": {
+      "tags": ["shared", "ui"]
+    },
     "shared-ui": {
       "tags": ["shared", "ui"]
     },

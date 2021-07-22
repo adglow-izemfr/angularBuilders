@@ -18,6 +18,7 @@
       "@ab/data": ["libs/shared/data/src/index.ts"],
       "@ab/form": ["libs/shared/form/src/index.ts"],
       "@ab/global": ["libs/shared/global/src/index.ts"],
+      "@ab/layout": ["libs/shared/layout/src/index.ts"],
       "@ab/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
