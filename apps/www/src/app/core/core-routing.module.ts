@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule, Routes } from '@angular/router';
+
+const notFoundRoute: Route =
+{
+  path: '**',
+  redirectTo: 'not-found',
+};
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     loadChildren: () => import('@ab/home').then((module) => module.HomeModule),
-  },
-  {
-    path: 'not-found',
-    loadChildren: () =>
-      import('@ab/not-found').then((module) => module.NotFoundModule),
   },
   {
     path: 'resource',
@@ -38,7 +39,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot([...routes, notFoundRoute])],
   exports: [RouterModule],
 })
 export class CoreRoutingModule {}

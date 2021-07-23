@@ -31,7 +31,6 @@ nx g c templates/card --project=shared-ui --export=true --type=Template
 ng g interface models/card --project shared-ui
 nx g directive directives/track --project=shared-ui --export=true
 nx g pipe pipes/truncate --project=shared-ui --export=true
-
 git add *
 git commit -m 'feat: generate ui library'
 
