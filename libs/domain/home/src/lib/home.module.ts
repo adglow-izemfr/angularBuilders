@@ -1,7 +1,8 @@
+import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CategoryListComponent } from './category-list/category-list.component';
+import { CategoryList } from './category-list/category-list.component';
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -10,10 +11,11 @@ import { HomePage } from './home.page';
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: HomePage}
     ]),
+    UiModule
   ],
   declarations: [
     HomePage,
-    CategoryListComponent
+    CategoryList
   ],
 })
 export class HomeModule {}

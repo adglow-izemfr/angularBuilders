@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Header } from '@ab/ui';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Category } from '../models/category';
 
 @Component({
   selector: 'ab-category-list',
@@ -7,11 +9,20 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CategoryListComponent implements OnInit {
+export class CategoryList {
+  @Input() categories: Category[] = [];
 
-  constructor() { }
+  header: Header = {
+    heroClass: 'is-danger',
+    title: 'Resources for Angular developers',
+    subtitle: 'Coming soon...',
+  };
 
-  ngOnInit(): void {
+  getCardFrom(category: Category) {
+    return {
+      title: category.name,
+      description: category.description,
+      link: `/category/${category.id}`,
+    }
   }
-
 }
