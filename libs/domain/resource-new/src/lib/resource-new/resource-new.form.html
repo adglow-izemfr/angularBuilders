@@ -1,27 +1,30 @@
-<form [formGroup]="form">
-  <div class="field mt-4 ">
-    <label for="categoryId" class="label"> A category </label>
-    <div class="select"><select id="categoryId" formControlName="categoryId" class="select" #selector>
-      <option *ngFor="let category of categories" [value]="category.id" #selector>
-        {{ category.name }}
-      </option>
-    </select></div>
-  </div>
-  <ab-form-control  [form]="form"
-                    formControlName="resourceName"
-                    label="The resource commercial name"
-                    placeholder="The ngSuperTool">
-  </ab-form-control>
-  <ab-form-control  [form]="form"
-                    formControlName="description"
-                    label="A short description"
-                    placeholder="Cool things about the resource">
-  </ab-form-control>
-  <ab-form-control  [form]="form"
-                    formControlName="url"
-                    label="The url of the home page or repository"
-                    placeholder="https://cool.dev"
-                    type="url">
-  </ab-form-control>
+<form [formGroup]="form" (submit)="onSubmit()" class="box mt-4 mb-4" autocomplete="off">
+  <fieldset class="mb-4">
+    <div class="field mt-4 ">
+      <label for="categoryId" class="label"> A category </label>
+      <div class="select"><select id="categoryId" formControlName="categoryId" class="select" #selector>
+        <option *ngFor="let category of categories" [value]="category.id" #selector>
+          {{ category.name }}
+        </option>
+      </select></div>
+    </div>
+    <ab-form-control  [form]="form"
+                      formControlName="resourceName"
+                      label="The resource commercial name"
+                      placeholder="The ngSuperTool">
+    </ab-form-control>
+    <ab-form-control  [form]="form"
+                      formControlName="description"
+                      label="A short description"
+                      placeholder="Cool things about the resource">
+    </ab-form-control>
+    <ab-form-control  [form]="form"
+                      formControlName="url"
+                      label="The url of the home page or repository"
+                      placeholder="https://cool.dev"
+                      type="url">
+    </ab-form-control>
+    <ab-course [hidden]="form.value.categoryId !== 'courses'"></ab-course>
+  </fieldset>
   <input type="submit" value="Add to the catalog!" [disabled]="form.invalid" class="button is-link mt-4" />
 </form>

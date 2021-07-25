@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CourseForm } from '../course-form/course.form';
 import { Category } from '../models/category';
 import { Resource } from '../models/resource';
 
@@ -13,6 +14,7 @@ import { Resource } from '../models/resource';
 export class ResourceNewForm implements OnInit {
   @Input() categories: Category[] = [];
   @Output() send = new EventEmitter<Resource>();
+  @ViewChild(CourseForm, { static: true }) courseForm!: CourseForm;
   form!: FormGroup;
   constructor(private fb: FormBuilder) { }
 
@@ -22,7 +24,16 @@ export class ResourceNewForm implements OnInit {
       resourceName: new FormControl('', [Validators.required, Validators.minLength(2)]),
       description: new FormControl('', [Validators.minLength(3)]),
       url: new FormControl('', []),
+      course: this.courseForm.buildForm(),
     });
+  }
+
+  onSubmit() {
+    const newResource = {...this.form.value };
+    if (newResource.categoryId !== 'courses') {
+      delete newResource.course;
+    }
+    this.send.next(newResource);
   }
 
   hasErrorToShow(formControlName: string) {
