@@ -25,6 +25,18 @@
                       type="url">
     </ab-form-control>
     <ab-course [hidden]="form.value.categoryId !== 'courses'"></ab-course>
+    <ab-form-control  [form]="form"
+                      type="number"
+                      formControlName="price"
+                      label="Price in US$"
+                      placeholder="free">
+    </ab-form-control>
+    <ab-form-control  [form]="form"
+                      type="number"
+                      formControlName="confirmPrice"
+                      label="Price in US$"
+                      placeholder="free">
+    </ab-form-control>
   </fieldset>
   <input type="submit" value="Add to the catalog!" [disabled]="form.invalid" class="button is-link mt-4" />
 </form>

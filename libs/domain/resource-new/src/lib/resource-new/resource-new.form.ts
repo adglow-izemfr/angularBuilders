@@ -1,3 +1,4 @@
+import { AbValidators } from '@ab/form';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CourseForm } from '../course-form/course.form';
@@ -23,8 +24,13 @@ export class ResourceNewForm implements OnInit {
       categoryId: new FormControl('', [Validators.required]),
       resourceName: new FormControl('', [Validators.required, Validators.minLength(2)]),
       description: new FormControl('', [Validators.minLength(3)]),
-      url: new FormControl('', []),
+      url: new FormControl('', [AbValidators.includes('https://')]),
       course: this.courseForm.buildForm(),
+      price: new FormControl(0, []),
+      confirmPrice: new FormControl(0, [])
+    }, {
+      validators: [AbValidators.confirmed('price', 'confirmPrice')],
+      updateOn: 'blur',
     });
   }
 
