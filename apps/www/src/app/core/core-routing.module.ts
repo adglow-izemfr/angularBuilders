@@ -1,3 +1,4 @@
+import { AuthGuard } from '@ab/auth';
 import { NgModule } from '@angular/core';
 import { Route, RouterModule, Routes } from '@angular/router';
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'resource-new',
+    canLoad: [AuthGuard],
     loadChildren: () =>
       import('@ab/resource-new').then((module) => module.ResourceNewModule),
   },
