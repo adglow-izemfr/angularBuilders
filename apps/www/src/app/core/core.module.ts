@@ -1,10 +1,12 @@
+import { TrackerInterceptor } from '@ab/data';
+import { ErrorHandlerService, TrackerStoreService } from '@ab/global';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 import { CoreRoutingModule } from './core-routing.module';
-import { TrackerStoreService } from '@ab/global';
 
 @NgModule({
   declarations: [],
@@ -12,6 +14,17 @@ import { TrackerStoreService } from '@ab/global';
     CommonModule,
     CoreRoutingModule,
     HttpClientModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TrackerInterceptor,
+      multi: true,
+    },
+    {
+      provide: ErrorHandler,
+      useClass: ErrorHandlerService,
+    }
   ]
 })
 export class CoreModule {
@@ -29,5 +42,8 @@ export class CoreModule {
             label: navigation.urlAfterRedirects,
           }),
       });
+    if (environment.production===false) {
+      tracker.selectActions$().subscribe((action) => console.log(action));
+    }
   }
 }
