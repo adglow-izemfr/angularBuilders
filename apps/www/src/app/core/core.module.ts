@@ -1,4 +1,4 @@
-import { TrackerInterceptor, AdapterInterceptor } from '@ab/data';
+import { TrackerInterceptor } from '@ab/data';
 import { ErrorHandlerService, TrackerStoreService } from '@ab/global';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -13,14 +13,9 @@ import { CoreRoutingModule } from './core-routing.module';
   imports: [
     CommonModule,
     CoreRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AdapterInterceptor,
-      multi: true,
-    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TrackerInterceptor,

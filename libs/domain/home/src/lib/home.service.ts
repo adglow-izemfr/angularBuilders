@@ -7,13 +7,13 @@ import { Category } from './models/category';
   providedIn: 'root'
 })
 export class HomeService {
-  private readonly categorysUrl = `https://api-angularbuilders.herokuapp.com/v1/categories`;
+  private readonly categoriesUrl = `https://api-angularbuilders.herokuapp.com/v1/categories`;
 
   constructor(private http: HttpClient) {}
 
   getCategories$() {
     return this.http
-      .get<apiCategories>(this.categorysUrl)
+      .get<apiCategories>(this.categoriesUrl)
       .pipe(map((apiResponse) => apiResponse.data));
   }
 }
